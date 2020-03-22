@@ -45,7 +45,7 @@ export default {
 <style scoped>
 .cart-height{
   width: 100%;
-  height:100px;
+  height:calc(100vh - 90px);
   z-index: 9;
 }
 </style>
