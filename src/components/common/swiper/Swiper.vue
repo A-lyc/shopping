@@ -57,14 +57,13 @@ export default {
     }, 500);
 
       //拖动事件
-      this.touchStart()
-      this.scrollContent()
-      this.checkPosition()
-      this.setTransform()
-      this.handleDom()
-      this.touchStart()
-      this.touchMove()
-      this.touchEnd()
+      // this.scrollContent()
+      // this.checkPosition()
+      // this.setTransform()
+      // this.handleDom()
+      // this.touchStart()
+      // this.touchMove()
+      // this.touchEnd()
   },
   methods: {
     /**
