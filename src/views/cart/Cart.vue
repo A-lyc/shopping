@@ -1,13 +1,7 @@
 <template>
   <div class="cart-box">
-<<<<<<< HEAD
-    <nav-bar-item></nav-bar-item>
-  <scroll class="cart-height" ref='scroll' :probe-type="3" >
-    <shopping :add-cart="addCart" @itemImagess="itemImagess"></shopping>
-</scroll>
-=======
-    <nav-bar-item class="nav-bar-item"></nav-bar-item>
 
+    <nav-bar-item class="nav-bar-item"></nav-bar-item>
     <!-- 商品列表 -->
     <scroll class="cart-height" ref="scroll" :probe-type="3" @scroll="contentScroll">
       <car-list-item v-for="(item,i) in cartList" :key="i" :product="item"></car-list-item>
@@ -16,10 +10,7 @@
 
     <!-- 底部汇总 -->
     <cait-button-bar></cait-button-bar>
-<<<<<<< HEAD
->>>>>>> dfecb0ab4f7a7c64d80b13340d3917f87dae7a0f
-=======
->>>>>>> dfecb0ab4f7a7c64d80b13340d3917f87dae7a0f
+
   </div>
 </template>
 

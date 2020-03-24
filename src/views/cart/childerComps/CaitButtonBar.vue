@@ -1,7 +1,9 @@
 <template>
   <div class="cait-button-bar">
     <div class="cait-button">
-     <check-button></check-button> 
+     <check-button 
+     :is-checked='isSelectAll' 
+     @click.native="checkClick"></check-button> 
      <span>全选</span>
     </div>
     <div>
@@ -15,12 +17,16 @@
 
 <script>
 import CheckButton from '@/components/content/checkButton/CheckButton'
+import {mapGetters} from 'vuex'
 export default {
 name:'CaitButtonBar',
 components:{
   CheckButton
 },
 computed: {
+  ...mapGetters([
+    'cartList'
+  ]),
   totalPrice(){
    return "￥" + this.$store.state.cartList.filter(item =>{
      return item.checked
@@ -30,9 +36,24 @@ computed: {
   },
   calculateLength(){
      return this.$store.state.cartList.filter(item => item.checked).length
-  }
-
+  },
+  isSelectAll(){
+    if(this.$store.state.cartList.length === 0 ){return false}
+    return !(this.$store.state.cartList.filter(item => !item.checked).length)
+  },
 },
+methods:{
+  checkClick(){
+    if(this.isSelectAll){//全部选中
+      this.cartList.forEach(item => item.checked = false)
+      }else{//部分会或者全部不选中
+        this.cartList.forEach(item => item.checked = true)
+      }
+    // this.cartList.forEach(item => item.checked = !this.isSelectAll)
+  }
+}
+
+
 }
 </script>
 
