@@ -1,12 +1,12 @@
 <template>
   <div>
-
-    <div>--{{ItemParams.info.key}}</div>
-    <div v-for='(item,i) in ItemParams.info.set' :key="i+item.key">{{item.value}}--{{item.key}}</div>
+    <p>-------------------------------------------------------------</p>
+    <!-- <div>--{{ItemParams.info.key}}</div> -->
+    <!-- <div v-for='(item,index) in ItemParams.info.set' :key="index">123{{item.key}}123--{{item.value}}</div> -->
     
     <p>-------------------------------------------------------------</p>
-    <div>{{ItemParams.rule.disclaimer}}--{{ItemParams.rule.key}}</div>
-    <div v-for='(item,i) in ItemParams.rule.tables[0]' :key="i">{{item[1]}}--{{item[2]}}--{{item[3]}}</div>
+    <!-- <div>{{ItemParams.rule.disclaimer}}--{{ItemParams.rule.key}}</div> -->
+    <!-- <div v-for='(item,i) in ItemParams.rule.tables[0]' :key="i+'a'">{{item[1]}}--{{item[2]}}--{{item[3]}}</div> -->
   </div>
 </template>
 
@@ -20,6 +20,8 @@ props:{
       return {}
     }
   }
+},
+activated(){
 }
 }
 </script>

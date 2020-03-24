@@ -1,7 +1,7 @@
 <template>
   <div class="cart-box">
     <nav-bar-item></nav-bar-item>
-  <scroll class="cart-height" ref='scroll' :probe-type="3" @scroll="contentScroll">
+  <scroll class="cart-height" ref='scroll' :probe-type="3" >
     <shopping :add-cart="addCart" @itemImagess="itemImagess"></shopping>
 </scroll>
   </div>
@@ -35,9 +35,9 @@ export default {
       this.newRefresh();
       
     },
-    contentScroll(position){
-      console.log(position)
-    }
+    // contentScroll(position){
+    //   console.log(position)
+    // }
   }
 };
 </script>
@@ -45,7 +45,7 @@ export default {
 <style scoped>
 .cart-height{
   width: 100%;
-  height:calc(100vh - 90px);
+  height:calc(100vh - 100px);
   z-index: 9;
 }
 </style>
