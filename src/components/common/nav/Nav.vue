@@ -33,7 +33,7 @@ export default {
   display: flex;
   line-height: 40px;
   top: 0;
-  z-index: 9;
+  z-index:100;
 }
 .left,.right{
   width: 60px;
