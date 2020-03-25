@@ -3,13 +3,29 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+//安装的插件
+import FastClick from 'fastclick'
+import VueLazyLoad from 'vue-lazyload'
+
+//自定义的插件
 import toast from './components/common/toast'
+
+
 
 Vue.config.productionTip = false
 Vue.prototype.$bus = new Vue()
 
 //安装子级定义的插件toast
 Vue.use(toast)
+
+//解决移动端的300ms延迟
+FastClick.attach(document.body)
+
+//使用图片懒加载插件
+Vue.use(VueLazyLoad, {
+  loading: require('./assets/img/common/placeholder.png')
+})
+
 
 new Vue({
   router,
@@ -18,12 +34,4 @@ new Vue({
 }).$mount('#app')
 
 
-const arr = [0,1, 2, 3, 45, 8, 8, true, false]
 
-const array =  arr.filter(item =>{
- if(item===false){
-   item = true
- }
- return item
-})
-console.log(array)

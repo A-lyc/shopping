@@ -39,13 +39,13 @@ computed: {
   },
   isSelectAll(){
     if(this.$store.state.cartList.length === 0 ){return false}
-    return !(this.$store.state.cartList.filter(item => !item.checked).length)
+    return !(this.$store.state.cartList.filter(item => !item.checked).length)//过滤数据返回过滤后的数组
   },
 },
 methods:{
   checkClick(){
     if(this.isSelectAll){//全部选中
-      this.cartList.forEach(item => item.checked = false)
+      this.cartList.forEach(item => item.checked = false)//给数组内的一个值赋值
       }else{//部分会或者全部不选中
         this.cartList.forEach(item => item.checked = true)
       }

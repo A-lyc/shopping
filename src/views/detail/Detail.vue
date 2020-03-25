@@ -115,6 +115,7 @@ export default {
     },
     titleCilck(index) {
       this.$refs.scroll.scrollTo(0, -this.themeTopYs[index], 500);
+      
     },
     contentScroll(position) {
       //获取Y值

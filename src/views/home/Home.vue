@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div class="tab-con"></div>
     <nav-item>
       <div slot="center">购物街</div>
     </nav-item>
@@ -222,7 +223,7 @@ export default {
 
 .tab-con {
   position: sticky;
-  top: 44px;
+  top: 44Px;
 }
 
 .content {
