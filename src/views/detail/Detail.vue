@@ -10,6 +10,7 @@
     </scroll>
     <back-top @click.native="bakClick" v-show="isShowBackTop"></back-top>
     <detail-bottom-bar @addCart="addToCart"></detail-bottom-bar>
+      <!-- <toast :message="message" :show="show"></toast> -->
   </div>
 </template>
 
@@ -29,6 +30,8 @@ import DetailBottomBar from "./childerComps/DetailBottomBar";
 
 import { getDetail, Goods, DetailActive, DetailInfo } from "@/network/detail";
 
+// import Toast from '@/components/common/toast/Toast'
+
 export default {
   name: "Detail",
   mixins: [timeListenerMiXin, backTopMixin],
@@ -42,7 +45,10 @@ export default {
       itemParams: {},
       themeTopYs: [],
       getThemeTopY: null,
-      currentIndex: 0
+      currentIndex: 0,
+      // message:'',
+      // show:false
+
     };
   },
   components: {
@@ -53,7 +59,8 @@ export default {
     Scroll,
     DetailInfoList,
     ItemParamss,
-    DetailBottomBar
+    DetailBottomBar,
+    // Toast
   },
   created() {
     //获取iid保存传入
@@ -108,6 +115,7 @@ export default {
     },
     titleCilck(index) {
       this.$refs.scroll.scrollTo(0, -this.themeTopYs[index], 500);
+      
     },
     contentScroll(position) {
       //获取Y值
@@ -141,7 +149,19 @@ export default {
       
       //将商品添加到购物车
       // this.$store.state.cartList.push(product)
-      this.$store.dispatch('addCart',product)
+      //dispatch可以返回一个Promise，这个代码又是在vuex中取出，所以可以使用promise
+      this.$store.dispatch('addCart',product).then((res) =>{
+        console.log(res)
+        this.$toast.isShow(res,2000)
+      //  this.show = true;
+      //  this.message = res
+      //   setTimeout(()=>{
+      //     this.show = false;
+      //  this.message = ''
+      //   },1000)
+      })
+
+      //3.添加到购物车成功
       
     }
   }

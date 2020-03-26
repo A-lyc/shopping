@@ -1,7 +1,11 @@
 <template>
   <div class="cart-box">
+<<<<<<< HEAD
     <nav-bar-item class="nav-bar-item"></nav-bar-item>
+=======
+>>>>>>> 12182732ccecf8e977c96983078925fc6ea8be5d
 
+    <nav-bar-item class="nav-bar-item"></nav-bar-item>
     <!-- 商品列表 -->
     <scroll class="cart-height" ref="scroll" :probe-type="3" @scroll="contentScroll">
       <car-list-item v-for="(item,i) in cartList" :key="i" :product="item"></car-list-item>
