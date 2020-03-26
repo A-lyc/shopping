@@ -88,15 +88,15 @@ export default {
   },//end computed
 
   //销毁函数  添加keep-alive不会被销毁
-    destroyed() {
-      console.log('销毁')
-    },
+  //   destroyed() {
+  //  console.log('销毁之前')
+  //  },
 
     //当前活跃状态
     activated() {
      this.$refs.scroll.scrollTo(0,this.saveY,0)
      this.$refs.scroll.refresh()
-     console.log(this.$store.state.cartList)
+    //  console.log(this.$store.state.cartList)
     },
 
     //不是活跃状态
