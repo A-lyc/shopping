@@ -17,6 +17,7 @@ export default {
   },
   computed: {
       isActive() {
+//点击切换状态
         return this.$route.path.indexOf(this.path) !== -1
       },
       activeStyle() {
